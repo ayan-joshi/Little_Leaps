@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import productAwardsData from '@/data/productAwards.json';
 import type { ProductAwardsData } from '@/types';
 import AwardsClient from '@/components/awards/AwardsClient';
@@ -98,7 +99,9 @@ export default function AwardsPage() {
         </div>
 
         {/* Awards grid with dropdowns */}
-        <AwardsClient data={data} />
+        <Suspense fallback={<div className="h-40 flex items-center justify-center text-gray-400 text-sm">Loading awards…</div>}>
+          <AwardsClient data={data} />
+        </Suspense>
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center bg-gradient-to-r from-lavender-50 to-blush-50

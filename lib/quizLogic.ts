@@ -125,7 +125,7 @@ function determineTier(percentage: number): Tier {
       status: 'On Track',
       label: 'On Track',
       description:
-        "Your baby is meeting developmental milestones well. Keep up the wonderful play, conversation, and stimulation — every interaction makes a real difference.",
+        "Your baby is meeting developmental milestones well. Keep up the wonderful play, conversation, and daily interactions — every moment you spend talking, singing, and playing with your baby makes a real difference.",
     };
   }
   if (percentage >= 45) {
@@ -134,7 +134,7 @@ function determineTier(percentage: number): Tier {
       status: 'Slight Delay',
       label: 'Slight Delay',
       description:
-        "Some milestones are still emerging, which is very common at this age. Focused play activities can help, and your health visitor can offer reassurance or guidance.",
+        "Some milestones are still emerging, which is very common at this age. Focused play activities and daily stimulation can help. If you have any concerns, your child's paediatrician is the best person to speak to for reassurance and guidance.",
     };
   }
   return {
@@ -142,7 +142,7 @@ function determineTier(percentage: number): Tier {
     status: 'Needs Attention',
     label: 'Needs Attention',
     description:
-      "Based on your answers, we recommend speaking with your paediatrician or health visitor. Early support can make a significant positive difference — you are doing the right thing by checking.",
+      "Based on your answers, we recommend speaking with your paediatrician soon. Early support from a specialist can make a significant positive difference — you are doing the right thing by checking. Many children with early intervention catch up fully.",
   };
 }
 
@@ -168,15 +168,15 @@ function generateRecommendations(
 ): string[] {
   const tips: Record<QuizCategory, string> = {
     gross_motor:
-      'Encourage daily floor time and tummy time to build core strength and motor confidence.',
+      'Give your baby daily floor time and tummy time on a firm mat. Oil massage before bath strengthens muscles and body awareness. Let them roll, crawl, and cruise freely on safe surfaces.',
     fine_motor:
-      'Offer safe objects of different textures and sizes to grasp, squeeze, and explore.',
+      'Offer safe household objects of different textures — bowls to bang, soft food pieces to pick up, and rattles to grasp. Offering finger foods at meal times is excellent for developing the pincer grip.',
     language:
-      'Talk, sing, and read to your baby every day — narrate your actions to build vocabulary.',
+      'Talk to your baby constantly in your home language — whatever feels most natural to you. Sing nursery rhymes and narrate daily activities out loud. Bilingual and multilingual homes are completely normal; count words across all languages.',
     cognitive:
-      'Play peek-a-boo, hide-and-seek with toys, and simple sorting games to stimulate thinking.',
+      'Play peek-a-boo and hide toys under a cloth to build object permanence. Simple cause-and-effect toys (press a button, hear a sound) stimulate thinking. Reading picture books together every day is one of the best things you can do.',
     social_emotional:
-      'Maintain consistent routines and respond warmly to every cue to build secure attachment.',
+      'Respond warmly and consistently to every cry and cue — this builds secure attachment. Include your baby in family gatherings with grandparents and cousins. Consistent daily routines (meals, bath, sleep) help them feel safe and regulate emotions.',
   };
 
   const developing = categoryScores
@@ -187,16 +187,16 @@ function generateRecommendations(
 
   if (tier === 'on-track' && recs.length === 0) {
     recs.push(
-      'Celebrate this milestone with a Little Leaps certificate — you have both earned it!',
-      'Introduce simple puzzles and stacking toys to keep challenging your baby.',
-      'Playdates and group activities can further support social development.'
+      'Keep encouraging active play outdoors — parks, open grounds, or even the terrace are great for gross motor development.',
+      'Introduce simple shape-sorters and stacking rings to keep challenging their thinking.',
+      'Play dates with cousins or neighbourhood children support social and language development beautifully.'
     );
   }
 
   if (recs.length < 2) {
     recs.push(
-      'Read picture books together to build language and bonding.',
-      'Regular outdoor exploration stimulates all areas of development.'
+      'Read picture books together every day — even 10 minutes builds vocabulary and bonding.',
+      'Daily outdoor time — even a short walk — stimulates curiosity and all areas of development.'
     );
   }
 

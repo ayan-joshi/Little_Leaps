@@ -1,6 +1,6 @@
 {
-  "schema_version": "2.0",
-  "description": "Baby milestone quiz questions. Fields: id, age_min, age_max, category, categoryLabel, question, hint, options, weight.",
+  "schema_version": "3.0",
+  "description": "India-specific baby milestone quiz. Age-banded questions written for Indian parents. Weights reflect clinical significance at each age.",
   "categories": [
     "gross_motor",
     "fine_motor",
@@ -9,19 +9,20 @@
     "social_emotional"
   ],
   "questions": [
+
     {
       "id": "q_gm_01",
       "age_min": 1,
       "age_max": 3,
       "category": "gross_motor",
       "categoryLabel": "Gross Motor",
-      "question": "Does your baby lift their head briefly when placed on their tummy?",
-      "hint": "During tummy time, can they raise their head off the surface even for a moment?",
+      "question": "During tummy time on a soft mat, does your baby try to lift their head?",
+      "hint": "Even lifting the chin briefly off the surface counts. Start with 1–2 minutes of tummy time after a feed.",
       "options": [
-        { "value": "yes",          "label": "Yes, consistently",   "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",          "label": "Yes, lifts head clearly",   "score": 3 },
+        { "value": "sometimes",    "label": "Tries, lifts a little",     "score": 2 },
+        { "value": "just_started", "label": "Just starting to",          "score": 1 },
+        { "value": "no",           "label": "Not yet",                   "score": 0 }
       ],
       "weight": 1.0
     },
@@ -31,61 +32,29 @@
       "age_max": 3,
       "category": "gross_motor",
       "categoryLabel": "Gross Motor",
-      "question": "Can your baby move their arms and legs symmetrically?",
-      "hint": "Both arms and both legs moving in similar, coordinated ways.",
+      "question": "Do both your baby's arms and legs move equally on both sides?",
+      "hint": "Both sides should move symmetrically. Consistently favouring one side may need a paediatrician's review.",
       "options": [
-        { "value": "yes",          "label": "Yes, consistently",   "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, both sides move equally", "score": 3 },
+        { "value": "mostly",    "label": "Mostly, slight difference",    "score": 2 },
+        { "value": "unsure",    "label": "I am not sure",               "score": 1 },
+        { "value": "no",        "label": "One side moves much less",    "score": 0 }
       ],
-      "weight": 0.8
-    },
-    {
-      "id": "q_se_01",
-      "age_min": 1,
-      "age_max": 3,
-      "category": "social_emotional",
-      "categoryLabel": "Social & Emotional",
-      "question": "Does your baby make eye contact with you?",
-      "hint": "Holding your gaze for a few seconds when you are close.",
-      "options": [
-        { "value": "yes",          "label": "Yes, consistently",   "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.2
-    },
-    {
-      "id": "q_se_02",
-      "age_min": 1,
-      "age_max": 4,
-      "category": "social_emotional",
-      "categoryLabel": "Social & Emotional",
-      "question": "Has your baby given you their first real smile (not a reflex smile)?",
-      "hint": "A social smile in response to seeing your face or hearing your voice.",
-      "options": [
-        { "value": "yes",          "label": "Yes, lots of smiles", "score": 3 },
-        { "value": "sometimes",    "label": "A few times",          "score": 2 },
-        { "value": "just_started", "label": "Once or twice",        "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.5
+      "weight": 1.0
     },
     {
       "id": "q_lang_01",
       "age_min": 1,
-      "age_max": 4,
+      "age_max": 3,
       "category": "language",
       "categoryLabel": "Language",
-      "question": "Does your baby react to sounds or your voice by turning toward it?",
-      "hint": "Moving their head or eyes toward a sound source.",
+      "question": "Does your baby turn their head or look towards your voice when you call them?",
+      "hint": "They do not need to understand words yet — just reacting to sound and your familiar voice counts.",
       "options": [
-        { "value": "yes",          "label": "Yes, consistently",   "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, turns towards my voice",      "score": 3 },
+        { "value": "sometimes", "label": "Sometimes reacts to loud sounds",   "score": 2 },
+        { "value": "rarely",    "label": "Rarely",                           "score": 1 },
+        { "value": "no",        "label": "No reaction to voices or sounds",  "score": 0 }
       ],
       "weight": 1.0
     },
@@ -95,47 +64,64 @@
       "age_max": 3,
       "category": "cognitive",
       "categoryLabel": "Cognitive",
-      "question": "Does your baby follow a moving object or face with their eyes?",
-      "hint": "Visually tracking something slowly moved across their field of vision.",
+      "question": "Does your baby follow your face or a colourful toy with their eyes when you move it slowly?",
+      "hint": "Hold a bright dupatta or toy about 20–30 cm from their face and move it slowly side to side.",
       "options": [
-        { "value": "yes",          "label": "Yes, easily",         "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, follows clearly",          "score": 3 },
+        { "value": "sometimes", "label": "Follows briefly, then loses it", "score": 2 },
+        { "value": "rarely",    "label": "Rarely",                        "score": 1 },
+        { "value": "no",        "label": "No eye tracking yet",           "score": 0 }
       ],
       "weight": 1.0
     },
+    {
+      "id": "q_se_01",
+      "age_min": 1,
+      "age_max": 3,
+      "category": "social_emotional",
+      "categoryLabel": "Social & Emotional",
+      "question": "Has your baby given you a real social smile (not just wind) when you smile at them?",
+      "hint": "A social smile appears around 6 weeks. It comes when they see your face — not just randomly.",
+      "options": [
+        { "value": "yes",       "label": "Yes, smiles back when I smile",      "score": 3 },
+        { "value": "sometimes", "label": "Occasionally, not yet consistent",   "score": 2 },
+        { "value": "unsure",    "label": "I have seen it once or twice",       "score": 1 },
+        { "value": "no",        "label": "No smiling yet",                     "score": 0 }
+      ],
+      "weight": 1.2
+    },
+
     {
       "id": "q_gm_03",
       "age_min": 3,
       "age_max": 6,
       "category": "gross_motor",
       "categoryLabel": "Gross Motor",
-      "question": "Can your baby hold their head steady when held upright?",
-      "hint": "Minimal bobbing — they can support their head without it flopping.",
+      "question": "When you hold your baby upright, does their head stay steady without wobbling?",
+      "hint": "By 4 months most babies have good head control. Support their head only if needed.",
       "options": [
-        { "value": "yes",          "label": "Yes, steady",              "score": 3 },
-        { "value": "sometimes",    "label": "Mostly, with some wobble", "score": 2 },
-        { "value": "just_started", "label": "Just starting to",         "score": 1 },
-        { "value": "no",           "label": "Not yet",                  "score": 0 }
+        { "value": "yes",       "label": "Yes, head is completely steady",  "score": 3 },
+        { "value": "mostly",    "label": "Mostly steady, slight wobble",    "score": 2 },
+        { "value": "some",      "label": "Some control, needs support",     "score": 1 },
+        { "value": "no",        "label": "Head still very wobbly",         "score": 0 }
       ],
-      "weight": 1.2
+      "weight": 1.1
     },
     {
       "id": "q_gm_04",
-      "age_min": 4,
-      "age_max": 7,
+      "age_min": 3,
+      "age_max": 6,
       "category": "gross_motor",
       "categoryLabel": "Gross Motor",
-      "question": "Has your baby rolled over (tummy to back, or back to tummy)?",
-      "hint": "Rolling over completely without help.",
+      "question": "Has your baby rolled from their tummy to their back?",
+      "hint": "Rolling from tummy to back usually comes before rolling from back to tummy. Place them on a firm surface and watch.",
       "options": [
-        { "value": "yes",          "label": "Yes, both ways",      "score": 3 },
-        { "value": "sometimes",    "label": "One direction only",   "score": 2 },
-        { "value": "just_started", "label": "Just started",         "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, rolls easily",              "score": 3 },
+        { "value": "sometimes", "label": "Has done it once or twice",      "score": 2 },
+        { "value": "trying",    "label": "Trying but not managed yet",     "score": 1 },
+        { "value": "no",        "label": "Not yet",                        "score": 0 }
       ],
-      "weight": 1.5
+      "weight": 1.0
     },
     {
       "id": "q_fm_01",
@@ -143,335 +129,628 @@
       "age_max": 6,
       "category": "fine_motor",
       "categoryLabel": "Fine Motor",
-      "question": "Does your baby reach for and bat at nearby objects?",
-      "hint": "Swiping at a toy or object dangling in front of them.",
+      "question": "Does your baby reach out and grab a rattle or toy when it is held in front of them?",
+      "hint": "By 4 months babies start intentionally reaching. Hold the toy just within their arm reach.",
       "options": [
-        { "value": "yes",          "label": "Yes, purposefully",   "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",         "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, reaches and grabs it",       "score": 3 },
+        { "value": "sometimes", "label": "Swipes at it sometimes",          "score": 2 },
+        { "value": "trying",    "label": "Notices it but does not grab yet", "score": 1 },
+        { "value": "no",        "label": "No reaching yet",                 "score": 0 }
       ],
       "weight": 1.0
-    },
-    {
-      "id": "q_lang_02",
-      "age_min": 2,
-      "age_max": 6,
-      "category": "language",
-      "categoryLabel": "Language",
-      "question": "Does your baby coo or make happy gurgling sounds?",
-      "hint": "Vowel-like sounds like 'ooh' and 'aah' when content.",
-      "options": [
-        { "value": "yes",          "label": "Yes, lots of cooing", "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",         "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.0
-    },
-    {
-      "id": "q_se_03",
-      "age_min": 3,
-      "age_max": 7,
-      "category": "social_emotional",
-      "categoryLabel": "Social & Emotional",
-      "question": "Does your baby laugh or giggle in response to play?",
-      "hint": "Audible laughter when tickled, lifted, or played with.",
-      "options": [
-        { "value": "yes",          "label": "Yes, belly laughs!",  "score": 3 },
-        { "value": "sometimes",    "label": "Chuckles sometimes",   "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.2
-    },
-    {
-      "id": "q_gm_05",
-      "age_min": 6,
-      "age_max": 10,
-      "category": "gross_motor",
-      "categoryLabel": "Gross Motor",
-      "question": "Can your baby sit without support for at least a few seconds?",
-      "hint": "Sitting independently, without holding onto anything.",
-      "options": [
-        { "value": "yes",          "label": "Yes, steadily",        "score": 3 },
-        { "value": "sometimes",    "label": "With a little wobble", "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.5
     },
     {
       "id": "q_fm_02",
-      "age_min": 5,
-      "age_max": 9,
+      "age_min": 3,
+      "age_max": 6,
       "category": "fine_motor",
       "categoryLabel": "Fine Motor",
-      "question": "Does your baby transfer objects from one hand to the other?",
-      "hint": "Passing a toy from one hand to the other deliberately.",
+      "question": "Does your baby bring their hands to their mouth and explore their fingers?",
+      "hint": "Hand-to-mouth play is a normal part of this age. It helps babies learn about their body.",
       "options": [
-        { "value": "yes",          "label": "Yes, easily",         "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, does this a lot",        "score": 3 },
+        { "value": "sometimes", "label": "Does this occasionally",      "score": 2 },
+        { "value": "rarely",    "label": "Rarely",                      "score": 1 },
+        { "value": "no",        "label": "Not yet",                     "score": 0 }
       ],
-      "weight": 1.0
+      "weight": 0.9
+    },
+    {
+      "id": "q_lang_02",
+      "age_min": 3,
+      "age_max": 6,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "Does your baby make cooing or vowel sounds ('aaa', 'ooo', 'eee') when you talk to them?",
+      "hint": "This is your baby's first 'conversation'. Pause after you speak — they may coo back.",
+      "options": [
+        { "value": "yes",       "label": "Yes, coos and makes sounds often",  "score": 3 },
+        { "value": "sometimes", "label": "Does it sometimes",                 "score": 2 },
+        { "value": "rarely",    "label": "Rarely makes vocal sounds",         "score": 1 },
+        { "value": "no",        "label": "No vocal sounds yet",               "score": 0 }
+      ],
+      "weight": 1.1
     },
     {
       "id": "q_lang_03",
-      "age_min": 5,
-      "age_max": 9,
+      "age_min": 3,
+      "age_max": 6,
       "category": "language",
       "categoryLabel": "Language",
-      "question": "Does your baby babble with repeated syllables like 'ba-ba' or 'da-da'?",
-      "hint": "Repetitive consonant-vowel sounds, even if not meaningful yet.",
+      "question": "Does your baby laugh or giggle — not just smile, but make a sound of joy?",
+      "hint": "First laughs usually appear around 3–4 months. Try funny faces or gentle tickles.",
       "options": [
-        { "value": "yes",          "label": "Yes, lots of babble", "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",         "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.2
-    },
-    {
-      "id": "q_cog_02",
-      "age_min": 6,
-      "age_max": 10,
-      "category": "cognitive",
-      "categoryLabel": "Cognitive",
-      "question": "Does your baby look for a toy that has been hidden under a cloth?",
-      "hint": "Understanding that things still exist even when out of sight (object permanence).",
-      "options": [
-        { "value": "yes",          "label": "Yes, searches for it", "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally looks",    "score": 2 },
-        { "value": "just_started", "label": "Just starting to",      "score": 1 },
-        { "value": "no",           "label": "Not yet",               "score": 0 }
-      ],
-      "weight": 1.5
-    },
-    {
-      "id": "q_se_04",
-      "age_min": 6,
-      "age_max": 12,
-      "category": "social_emotional",
-      "categoryLabel": "Social & Emotional",
-      "question": "Does your baby show stranger anxiety or preference for familiar faces?",
-      "hint": "Becoming wary of unfamiliar people while being comfortable with caregivers.",
-      "options": [
-        { "value": "yes",          "label": "Yes, clear preference", "score": 3 },
-        { "value": "sometimes",    "label": "Mild preference",        "score": 2 },
-        { "value": "just_started", "label": "Just starting to",       "score": 1 },
-        { "value": "no",           "label": "Not yet",                "score": 0 }
+        { "value": "yes",       "label": "Yes, laughs clearly",         "score": 3 },
+        { "value": "sometimes", "label": "Has chuckled a few times",    "score": 2 },
+        { "value": "just",      "label": "Just starting to",            "score": 1 },
+        { "value": "no",        "label": "Not yet",                     "score": 0 }
       ],
       "weight": 1.0
     },
     {
-      "id": "q_gm_06",
-      "age_min": 8,
-      "age_max": 13,
-      "category": "gross_motor",
-      "categoryLabel": "Gross Motor",
-      "question": "Is your baby pulling themselves up to stand?",
-      "hint": "Using furniture or your hands to pull up to a standing position.",
+      "id": "q_cog_02",
+      "age_min": 3,
+      "age_max": 6,
+      "category": "cognitive",
+      "categoryLabel": "Cognitive",
+      "question": "Does your baby turn their head to look for the source of a sound (a rattle, a voice from across the room)?",
+      "hint": "Shake a rattle out of sight and watch if they search for it.",
       "options": [
-        { "value": "yes",          "label": "Yes, confidently",    "score": 3 },
-        { "value": "sometimes",    "label": "With effort",          "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, searches for the sound",    "score": 3 },
+        { "value": "sometimes", "label": "Sometimes looks",                "score": 2 },
+        { "value": "rarely",    "label": "Rarely",                         "score": 1 },
+        { "value": "no",        "label": "No response to sounds",          "score": 0 }
       ],
-      "weight": 1.5
+      "weight": 1.0
     },
     {
-      "id": "q_gm_07",
-      "age_min": 7,
-      "age_max": 12,
+      "id": "q_se_02",
+      "age_min": 3,
+      "age_max": 6,
+      "category": "social_emotional",
+      "categoryLabel": "Social & Emotional",
+      "question": "Does your baby get excited — kicking legs or waving arms — when they see you or another familiar family member approach?",
+      "hint": "Look for anticipatory excitement before you even pick them up.",
+      "options": [
+        { "value": "yes",       "label": "Yes, gets very excited",          "score": 3 },
+        { "value": "sometimes", "label": "Sometimes shows excitement",      "score": 2 },
+        { "value": "rarely",    "label": "Occasionally smiles",             "score": 1 },
+        { "value": "no",        "label": "No particular reaction to people","score": 0 }
+      ],
+      "weight": 1.0
+    },
+
+    {
+      "id": "q_gm_05",
+      "age_min": 5,
+      "age_max": 9,
       "category": "gross_motor",
       "categoryLabel": "Gross Motor",
-      "question": "Does your baby crawl or creep to get around?",
-      "hint": "Moving on hands and knees, or commando-crawling on their tummy.",
+      "question": "Can your baby sit on the floor without support for at least a few seconds?",
+      "hint": "By 6 months most babies sit with hands on the floor for balance; full independent sitting usually comes by 9 months.",
       "options": [
-        { "value": "yes",          "label": "Yes, gets everywhere!", "score": 3 },
-        { "value": "sometimes",    "label": "Short distances",        "score": 2 },
-        { "value": "just_started", "label": "Just starting to",       "score": 1 },
-        { "value": "no",           "label": "Not yet",                "score": 0 }
+        { "value": "yes",       "label": "Yes, sits independently",         "score": 3 },
+        { "value": "hands",     "label": "Sits with hands on floor",        "score": 2 },
+        { "value": "support",   "label": "Only with my support",            "score": 1 },
+        { "value": "no",        "label": "Cannot sit yet",                  "score": 0 }
       ],
       "weight": 1.2
+    },
+    {
+      "id": "q_gm_06",
+      "age_min": 5,
+      "age_max": 9,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "When you hold your baby upright with feet touching the floor, do they bear some weight on their legs?",
+      "hint": "They do not need to stand alone — just pushing down on their legs when held counts.",
+      "options": [
+        { "value": "yes",       "label": "Yes, pushes down strongly",    "score": 3 },
+        { "value": "some",      "label": "Bears some weight briefly",    "score": 2 },
+        { "value": "little",    "label": "Very little, mostly sits",     "score": 1 },
+        { "value": "no",        "label": "Legs buckle, no weight",       "score": 0 }
+      ],
+      "weight": 1.0
     },
     {
       "id": "q_fm_03",
-      "age_min": 8,
-      "age_max": 12,
+      "age_min": 5,
+      "age_max": 9,
       "category": "fine_motor",
       "categoryLabel": "Fine Motor",
-      "question": "Does your baby use a pincer grasp (thumb and forefinger) to pick up small objects?",
-      "hint": "Picking up small pieces of food or objects between thumb and index finger.",
+      "question": "Does your baby transfer an object (such as a small toy or spoon) from one hand to the other?",
+      "hint": "Give them a light rattle and watch if they pass it hand to hand.",
       "options": [
-        { "value": "yes",          "label": "Yes, well developed",  "score": 3 },
-        { "value": "sometimes",    "label": "Developing",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",      "score": 1 },
-        { "value": "no",           "label": "Not yet",               "score": 0 }
+        { "value": "yes",       "label": "Yes, does this easily",          "score": 3 },
+        { "value": "sometimes", "label": "Has done it a few times",        "score": 2 },
+        { "value": "trying",    "label": "Tries but drops it",             "score": 1 },
+        { "value": "no",        "label": "Not yet",                        "score": 0 }
       ],
-      "weight": 1.5
+      "weight": 1.0
+    },
+    {
+      "id": "q_fm_04",
+      "age_min": 5,
+      "age_max": 9,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Does your baby use a raking motion with their fingers to pull a small puffed snack towards themselves?",
+      "hint": "Place a small, safe puffed piece (like a baby puff or soft cereal) on a flat surface and watch how they try to pick it up.",
+      "options": [
+        { "value": "yes",       "label": "Yes, rakes it up",               "score": 3 },
+        { "value": "sometimes", "label": "Tries with all fingers",         "score": 2 },
+        { "value": "palmar",    "label": "Scoops with full hand",          "score": 1 },
+        { "value": "no",        "label": "No interest or cannot pick up",  "score": 0 }
+      ],
+      "weight": 1.0
     },
     {
       "id": "q_lang_04",
-      "age_min": 9,
-      "age_max": 14,
+      "age_min": 5,
+      "age_max": 9,
       "category": "language",
       "categoryLabel": "Language",
-      "question": "Does your baby say any recognisable words like 'mama' or 'dada' with meaning?",
-      "hint": "Using specific sounds to refer to specific people or objects consistently.",
+      "question": "Does your baby babble with consonant sounds — strings like 'babababa', 'mamama', 'dadada'?",
+      "hint": "This is different from random cooing. Listen for repeated syllables.",
       "options": [
-        { "value": "yes",          "label": "Yes, 1-3 words",        "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes, not always", "score": 2 },
-        { "value": "just_started", "label": "Just one word",         "score": 1 },
-        { "value": "no",           "label": "Not yet",               "score": 0 }
-      ],
-      "weight": 2.0
-    },
-    {
-      "id": "q_gm_08",
-      "age_min": 10,
-      "age_max": 16,
-      "category": "gross_motor",
-      "categoryLabel": "Gross Motor",
-      "question": "Has your baby taken their first independent steps?",
-      "hint": "Walking without holding onto furniture or your hands.",
-      "options": [
-        { "value": "yes",          "label": "Yes, walking well",   "score": 3 },
-        { "value": "sometimes",    "label": "A few wobbly steps",  "score": 2 },
-        { "value": "just_started", "label": "Just started",        "score": 1 },
-        { "value": "no",           "label": "Not yet",             "score": 0 }
-      ],
-      "weight": 2.0
-    },
-    {
-      "id": "q_lang_05",
-      "age_min": 12,
-      "age_max": 18,
-      "category": "language",
-      "categoryLabel": "Language",
-      "question": "Does your baby use at least 3 words with consistent meaning?",
-      "hint": "Words used repeatedly for the same person or object.",
-      "options": [
-        { "value": "yes",          "label": "Yes, several words",  "score": 3 },
-        { "value": "sometimes",    "label": "2-3 words",            "score": 2 },
-        { "value": "just_started", "label": "1-2 words",            "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.8
-    },
-    {
-      "id": "q_cog_03",
-      "age_min": 12,
-      "age_max": 18,
-      "category": "cognitive",
-      "categoryLabel": "Cognitive",
-      "question": "Does your baby follow simple one-step instructions like 'give me the ball'?",
-      "hint": "Understanding and responding to simple verbal requests.",
-      "options": [
-        { "value": "yes",          "label": "Yes, reliably",       "score": 3 },
-        { "value": "sometimes",    "label": "Sometimes",            "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
-      ],
-      "weight": 1.5
-    },
-    {
-      "id": "q_se_05",
-      "age_min": 12,
-      "age_max": 20,
-      "category": "social_emotional",
-      "categoryLabel": "Social & Emotional",
-      "question": "Does your baby play simple imitation games like clapping or waving?",
-      "hint": "Copying actions you demonstrate, like clapping, waving bye-bye, or blowing kisses.",
-      "options": [
-        { "value": "yes",          "label": "Yes, loves it",       "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",         "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, babbles a lot",             "score": 3 },
+        { "value": "sometimes", "label": "Babbles sometimes",              "score": 2 },
+        { "value": "vowels",    "label": "Only vowel sounds so far",       "score": 1 },
+        { "value": "no",        "label": "Very little vocalising",         "score": 0 }
       ],
       "weight": 1.2
     },
     {
+      "id": "q_lang_05",
+      "age_min": 5,
+      "age_max": 9,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "Does your baby respond to their own name by looking up or turning towards you?",
+      "hint": "Say their name from across the room without using gestures and see if they look.",
+      "options": [
+        { "value": "yes",       "label": "Yes, looks up when called",      "score": 3 },
+        { "value": "sometimes", "label": "Sometimes responds",             "score": 2 },
+        { "value": "rarely",    "label": "Rarely, only if you are close",  "score": 1 },
+        { "value": "no",        "label": "No response to name",            "score": 0 }
+      ],
+      "weight": 1.3
+    },
+    {
+      "id": "q_cog_03",
+      "age_min": 5,
+      "age_max": 9,
+      "category": "cognitive",
+      "categoryLabel": "Cognitive",
+      "question": "If you drop a toy in front of your baby, do they look down to find where it went?",
+      "hint": "This shows the beginning of object permanence — understanding that things still exist when out of sight.",
+      "options": [
+        { "value": "yes",       "label": "Yes, searches for it",           "score": 3 },
+        { "value": "sometimes", "label": "Sometimes looks down",           "score": 2 },
+        { "value": "stares",    "label": "Just stares at where it was",    "score": 1 },
+        { "value": "no",        "label": "No interest when it drops",      "score": 0 }
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "q_se_03",
+      "age_min": 5,
+      "age_max": 9,
+      "category": "social_emotional",
+      "categoryLabel": "Social & Emotional",
+      "question": "Does your baby enjoy peek-a-boo? Do they laugh or look for your face when you reappear?",
+      "hint": "Cover your face with your hands or a cloth and reappear. Watch for anticipation and laughter.",
+      "options": [
+        { "value": "yes",       "label": "Yes, loves it and laughs",       "score": 3 },
+        { "value": "sometimes", "label": "Enjoys it sometimes",            "score": 2 },
+        { "value": "smiles",    "label": "Smiles but no big reaction",     "score": 1 },
+        { "value": "no",        "label": "No interest in the game",        "score": 0 }
+      ],
+      "weight": 1.0
+    },
+
+    {
+      "id": "q_gm_07",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Does your baby crawl on hands and knees, commando-crawl on their tummy, or move around the floor in their own way?",
+      "hint": "Any method of floor mobility counts — bottom shuffling, rolling, or commando crawl. Some babies skip crawling and go straight to standing.",
+      "options": [
+        { "value": "yes",       "label": "Yes, moves around independently",  "score": 3 },
+        { "value": "trying",    "label": "Trying to crawl, rocks back-forth", "score": 2 },
+        { "value": "rolling",   "label": "Rolls to move but no crawl",       "score": 1 },
+        { "value": "no",        "label": "Not moving around the floor yet",  "score": 0 }
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "q_gm_08",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Does your baby pull themselves to standing using the cot, sofa, or low table for support?",
+      "hint": "This is a key milestone that usually comes between 9–12 months.",
+      "options": [
+        { "value": "yes",       "label": "Yes, pulls up independently",  "score": 3 },
+        { "value": "sometimes", "label": "Has done it once or twice",    "score": 2 },
+        { "value": "trying",    "label": "Tries but cannot manage yet",  "score": 1 },
+        { "value": "no",        "label": "Not yet",                      "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_fm_05",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Does your baby pick up a small soft piece of food using just their thumb and first finger (pincer grasp)?",
+      "hint": "The pincer grasp develops around 9–10 months. Place a small, soft piece of food in front of them and watch how they pick it up.",
+      "options": [
+        { "value": "yes",       "label": "Yes, uses thumb and finger",      "score": 3 },
+        { "value": "raking",    "label": "Uses 3-4 fingers together",       "score": 2 },
+        { "value": "palm",      "label": "Scoops with whole hand",          "score": 1 },
+        { "value": "no",        "label": "Cannot pick up small pieces",     "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_fm_06",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Does your baby put small objects into a container and then take them back out?",
+      "hint": "Use a bowl and safe objects like soft blocks. In-and-out play develops understanding of containers.",
+      "options": [
+        { "value": "yes",       "label": "Yes, puts in and takes out",    "score": 3 },
+        { "value": "takes_out", "label": "Takes things out but not in",   "score": 2 },
+        { "value": "bangs",     "label": "Just bangs the container",      "score": 1 },
+        { "value": "no",        "label": "No interest yet",               "score": 0 }
+      ],
+      "weight": 1.0
+    },
+    {
       "id": "q_lang_06",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "Does your baby say 'mama', 'dada', or an equivalent first parent word and clearly mean you when they say it?",
+      "hint": "Babbling 'mamama' does not count — they should be saying it to get your attention or call you specifically.",
+      "options": [
+        { "value": "yes",       "label": "Yes, says it meaningfully",      "score": 3 },
+        { "value": "sometimes", "label": "Sometimes seems intentional",    "score": 2 },
+        { "value": "babbles",   "label": "Babbles it but not meaningfully", "score": 1 },
+        { "value": "no",        "label": "No first words yet",             "score": 0 }
+      ],
+      "weight": 1.3
+    },
+    {
+      "id": "q_lang_07",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "Does your baby understand simple familiar words like 'water', 'no', or 'bye' even if they cannot say them yet?",
+      "hint": "Say 'no' and see if they pause. Ask for water and see if they look at the glass or cup.",
+      "options": [
+        { "value": "yes",       "label": "Yes, understands several words",    "score": 3 },
+        { "value": "some",      "label": "Understands 1-2 familiar words",    "score": 2 },
+        { "value": "unsure",    "label": "Not sure if they understand",       "score": 1 },
+        { "value": "no",        "label": "No sign of understanding words",    "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_cog_04",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "cognitive",
+      "categoryLabel": "Cognitive",
+      "question": "Does your baby clap hands or wave goodbye when you model it?",
+      "hint": "Imitation is a key cognitive milestone. Clap your hands or wave and see if they copy you.",
+      "options": [
+        { "value": "yes",       "label": "Yes, imitates clapping or waving",  "score": 3 },
+        { "value": "sometimes", "label": "Sometimes tries to copy",           "score": 2 },
+        { "value": "watches",   "label": "Watches but does not copy yet",     "score": 1 },
+        { "value": "no",        "label": "No imitation yet",                  "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_se_04",
+      "age_min": 8,
+      "age_max": 14,
+      "category": "social_emotional",
+      "categoryLabel": "Social & Emotional",
+      "question": "Does your baby show stranger anxiety — becoming clingy or upset when an unfamiliar person holds them?",
+      "hint": "Stranger anxiety is a healthy developmental sign showing your baby knows who is safe.",
+      "options": [
+        { "value": "yes",       "label": "Yes, clearly prefers familiar people",  "score": 3 },
+        { "value": "sometimes", "label": "Sometimes wary of strangers",           "score": 2 },
+        { "value": "mild",      "label": "Mild, settles quickly",                 "score": 1 },
+        { "value": "no",        "label": "Goes to anyone without concern",        "score": 0 }
+      ],
+      "weight": 1.0
+    },
+
+    {
+      "id": "q_gm_09",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Does your baby walk independently without holding any support?",
+      "hint": "First independent steps usually come between 10–15 months. Walking with support (cruising) does not count here.",
+      "options": [
+        { "value": "yes",       "label": "Yes, walks independently",         "score": 3 },
+        { "value": "few_steps", "label": "Takes a few steps alone",          "score": 2 },
+        { "value": "cruising",  "label": "Walks holding furniture (cruising)","score": 1 },
+        { "value": "no",        "label": "Not walking yet",                  "score": 0 }
+      ],
+      "weight": 1.3
+    },
+    {
+      "id": "q_gm_10",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Does your baby climb onto low furniture like the diwan or sofa on their own?",
+      "hint": "Climbing is an important gross motor milestone at this age. Ensure safe spaces to explore.",
+      "options": [
+        { "value": "yes",       "label": "Yes, climbs up confidently",   "score": 3 },
+        { "value": "tries",     "label": "Tries, manages partially",     "score": 2 },
+        { "value": "bottom",    "label": "Gets on bum but not knees",    "score": 1 },
+        { "value": "no",        "label": "Not yet",                      "score": 0 }
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "q_fm_07",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Can your baby stack 2–3 blocks or cups on top of each other?",
+      "hint": "Block stacking requires good hand-eye coordination and develops around 12–15 months.",
+      "options": [
+        { "value": "yes",       "label": "Yes, stacks 3 or more",        "score": 3 },
+        { "value": "two",       "label": "Manages 2 blocks",             "score": 2 },
+        { "value": "tries",     "label": "Tries but they fall",          "score": 1 },
+        { "value": "no",        "label": "Not yet, just knocks them",    "score": 0 }
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "q_fm_08",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Does your baby scribble with a crayon or pencil when you give them one?",
+      "hint": "Any mark on paper counts — they do not need to draw a shape. Show them first.",
+      "options": [
+        { "value": "yes",       "label": "Yes, scribbles on paper",       "score": 3 },
+        { "value": "sometimes", "label": "Has made marks a few times",    "score": 2 },
+        { "value": "holds",     "label": "Holds it but does not mark",   "score": 1 },
+        { "value": "no",        "label": "No interest in crayon yet",     "score": 0 }
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "q_lang_08",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "How many meaningful words does your baby use — in any language (Hindi, Tamil, Bengali, or any other)?",
+      "hint": "Count all consistent words in all languages spoken at home — any word used with clear meaning counts.",
+      "options": [
+        { "value": "ten_plus",  "label": "10 or more words",                  "score": 3 },
+        { "value": "five_ten",  "label": "5–9 words",                         "score": 2 },
+        { "value": "one_four",  "label": "1–4 words",                         "score": 1 },
+        { "value": "none",      "label": "No clear words yet",                "score": 0 }
+      ],
+      "weight": 1.4
+    },
+    {
+      "id": "q_lang_09",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "language",
+      "categoryLabel": "Language",
+      "question": "Can your baby point to at least 2 body parts (nose, eyes, feet, etc.) when you name them?",
+      "hint": "Ask 'Where is your nose?' or 'Show me your eyes' without pointing yourself. Use your home language.",
+      "options": [
+        { "value": "four_plus", "label": "4 or more body parts",        "score": 3 },
+        { "value": "two_three", "label": "2–3 body parts",              "score": 2 },
+        { "value": "one",       "label": "Just 1",                      "score": 1 },
+        { "value": "none",      "label": "Not yet",                     "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_cog_05",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "cognitive",
+      "categoryLabel": "Cognitive",
+      "question": "Does your baby follow simple 2-word instructions without gestures, like 'get the ball' or 'give me' + an object?",
+      "hint": "Keep your hands still when you ask — do not point. Use your home language; the language does not matter, only whether they understand.",
+      "options": [
+        { "value": "yes",       "label": "Yes, follows 2-word instructions",  "score": 3 },
+        { "value": "one_word",  "label": "Follows 1-word instructions",       "score": 2 },
+        { "value": "gestures",  "label": "Only if I gesture too",             "score": 1 },
+        { "value": "no",        "label": "Does not follow instructions yet",  "score": 0 }
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "q_se_05",
+      "age_min": 11,
+      "age_max": 18,
+      "category": "social_emotional",
+      "categoryLabel": "Social & Emotional",
+      "question": "Does your baby show affection — giving hugs, kisses (pyaar), or snuggling into you voluntarily?",
+      "hint": "Affection should feel spontaneous, not just in response to prompting.",
+      "options": [
+        { "value": "yes",       "label": "Yes, shows affection freely",      "score": 3 },
+        { "value": "sometimes", "label": "Sometimes shows affection",        "score": 2 },
+        { "value": "prompted",  "label": "Only when I ask for a hug",        "score": 1 },
+        { "value": "no",        "label": "Does not show physical affection", "score": 0 }
+      ],
+      "weight": 1.1
+    },
+
+    {
+      "id": "q_gm_11",
+      "age_min": 16,
+      "age_max": 24,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Does your baby run — not just walk fast, but actually run with both feet briefly off the ground?",
+      "hint": "Running usually develops a few months after walking begins. Watch them on open ground.",
+      "options": [
+        { "value": "yes",       "label": "Yes, runs with confidence",    "score": 3 },
+        { "value": "fast_walk", "label": "Walks very fast but does not run","score": 2 },
+        { "value": "unsteady",  "label": "Tries but falls often",        "score": 1 },
+        { "value": "no",        "label": "Not running yet",              "score": 0 }
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "q_gm_12",
+      "age_min": 16,
+      "age_max": 24,
+      "category": "gross_motor",
+      "categoryLabel": "Gross Motor",
+      "question": "Can your baby kick a ball that is placed in front of them?",
+      "hint": "Place a soft ball on the floor and ask them to kick it. Walking up and stopping in front of it counts as progress.",
+      "options": [
+        { "value": "yes",       "label": "Yes, kicks it forward",         "score": 3 },
+        { "value": "nudges",    "label": "Nudges it with foot",           "score": 2 },
+        { "value": "tries",     "label": "Walks to it but loses balance", "score": 1 },
+        { "value": "no",        "label": "Cannot kick yet",              "score": 0 }
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "q_fm_09",
+      "age_min": 16,
+      "age_max": 24,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Can your baby turn the pages of a board book — one page at a time?",
+      "hint": "Board books are best at this age. Turning thick pages develops pincer strength.",
+      "options": [
+        { "value": "yes",       "label": "Yes, turns pages one at a time",   "score": 3 },
+        { "value": "several",   "label": "Turns several pages at once",      "score": 2 },
+        { "value": "tries",     "label": "Tries but struggles",              "score": 1 },
+        { "value": "no",        "label": "Cannot turn pages yet",            "score": 0 }
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "q_fm_10",
+      "age_min": 16,
+      "age_max": 24,
+      "category": "fine_motor",
+      "categoryLabel": "Fine Motor",
+      "question": "Does your baby try to feed themselves with a spoon — scooping food from a bowl and bringing it to their mouth?",
+      "hint": "Spilling is completely fine at this age. The attempt to use a spoon independently is what matters.",
+      "options": [
+        { "value": "yes",       "label": "Yes, feeds themselves with spoon",   "score": 3 },
+        { "value": "tries",     "label": "Tries but spills most",              "score": 2 },
+        { "value": "holds",     "label": "Holds spoon but uses hands to eat",  "score": 1 },
+        { "value": "no",        "label": "Does not attempt spoon feeding",     "score": 0 }
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "q_lang_10",
       "age_min": 16,
       "age_max": 24,
       "category": "language",
       "categoryLabel": "Language",
-      "question": "Does your baby use 10 or more words?",
-      "hint": "A growing vocabulary used meaningfully in daily interactions.",
+      "question": "Does your baby combine two words to make short phrases — like 'more water', 'daddy come', or 'car gone'?",
+      "hint": "Any language or mix of languages is fine. What matters is that they are combining two meaningful words together.",
       "options": [
-        { "value": "yes",          "label": "Yes, 10+ words",      "score": 3 },
-        { "value": "sometimes",    "label": "Around 5-10 words",   "score": 2 },
-        { "value": "just_started", "label": "A few words",          "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "yes",       "label": "Yes, uses 2-word phrases often",   "score": 3 },
+        { "value": "sometimes", "label": "Has done it a few times",          "score": 2 },
+        { "value": "single",    "label": "Only single words",                "score": 1 },
+        { "value": "no",        "label": "Mostly gestures, few words",       "score": 0 }
       ],
-      "weight": 2.0
+      "weight": 1.4
     },
     {
-      "id": "q_lang_07",
-      "age_min": 18,
+      "id": "q_lang_11",
+      "age_min": 16,
       "age_max": 24,
       "category": "language",
       "categoryLabel": "Language",
-      "question": "Is your baby starting to put two words together (e.g., 'more milk', 'daddy go')?",
-      "hint": "Combining two words to form simple phrases.",
+      "question": "Roughly how many different words does your baby use — counting all languages spoken at home?",
+      "hint": "By 18 months most babies have around 20 words; by 24 months around 50+. Count words across all languages spoken at home.",
       "options": [
-        { "value": "yes",          "label": "Yes, regularly",      "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",         "score": 2 },
-        { "value": "just_started", "label": "Just starting to",     "score": 1 },
-        { "value": "no",           "label": "Not yet",              "score": 0 }
+        { "value": "fifty_plus",   "label": "50 or more words",           "score": 3 },
+        { "value": "twenty_fifty", "label": "20–50 words",                "score": 2 },
+        { "value": "five_twenty",  "label": "5–20 words",                 "score": 1 },
+        { "value": "under_five",   "label": "Fewer than 5 words",         "score": 0 }
       ],
-      "weight": 2.0
+      "weight": 1.3
     },
     {
-      "id": "q_cog_04",
-      "age_min": 15,
+      "id": "q_cog_06",
+      "age_min": 16,
       "age_max": 24,
       "category": "cognitive",
       "categoryLabel": "Cognitive",
-      "question": "Does your baby engage in pretend play (e.g., feeding a toy, talking on a toy phone)?",
-      "hint": "Using objects symbolically in imaginative play.",
+      "question": "Can your baby sort objects by shape or colour — for example, putting all round pieces in one pile and square in another?",
+      "hint": "Use a simple shape-sorter toy or two bowls. Basic sorting is expected by around 18–24 months.",
       "options": [
-        { "value": "yes",          "label": "Yes, imaginative play", "score": 3 },
-        { "value": "sometimes",    "label": "Beginning to",           "score": 2 },
-        { "value": "just_started", "label": "Just started",           "score": 1 },
-        { "value": "no",           "label": "Not yet",                "score": 0 }
+        { "value": "yes",       "label": "Yes, sorts independently",         "score": 3 },
+        { "value": "with_help", "label": "Can do it with a little guidance", "score": 2 },
+        { "value": "random",    "label": "Places things randomly",           "score": 1 },
+        { "value": "no",        "label": "No interest in sorting",           "score": 0 }
       ],
-      "weight": 1.5
+      "weight": 1.1
     },
     {
-      "id": "q_gm_09",
-      "age_min": 18,
+      "id": "q_cog_07",
+      "age_min": 16,
       "age_max": 24,
-      "category": "gross_motor",
-      "categoryLabel": "Gross Motor",
-      "question": "Can your baby run (even if a bit unsteady)?",
-      "hint": "Moving faster than a walk, both feet off the ground at some point.",
+      "category": "cognitive",
+      "categoryLabel": "Cognitive",
+      "question": "Does your baby pretend to do everyday things — like feeding their toy doll or teddy from a pretend bowl, or pretend-talking on a toy phone?",
+      "hint": "Pretend play shows symbolic thinking. Look for them imitating household activities they have seen.",
       "options": [
-        { "value": "yes",          "label": "Yes, runs everywhere", "score": 3 },
-        { "value": "sometimes",    "label": "Fast walk / attempt",   "score": 2 },
-        { "value": "just_started", "label": "Just started",          "score": 1 },
-        { "value": "no",           "label": "Not yet",               "score": 0 }
+        { "value": "yes",       "label": "Yes, has clear pretend play",      "score": 3 },
+        { "value": "sometimes", "label": "Does it occasionally",             "score": 2 },
+        { "value": "imitates",  "label": "Imitates actions but not pretend", "score": 1 },
+        { "value": "no",        "label": "No pretend play yet",              "score": 0 }
       ],
-      "weight": 1.5
+      "weight": 1.2
     },
     {
       "id": "q_se_06",
-      "age_min": 18,
+      "age_min": 16,
       "age_max": 24,
       "category": "social_emotional",
       "categoryLabel": "Social & Emotional",
-      "question": "Does your baby show signs of empathy (e.g., comforting a crying person or toy)?",
-      "hint": "Noticing others' distress and attempting to comfort or help.",
+      "question": "When playing near another child (cousin, neighbour's child), does your baby play alongside them — even if not together?",
+      "hint": "Parallel play (playing side by side without direct interaction) is normal and healthy at this age.",
       "options": [
-        { "value": "yes",          "label": "Yes, clearly",         "score": 3 },
-        { "value": "sometimes",    "label": "Occasionally",          "score": 2 },
-        { "value": "just_started", "label": "Just starting to",      "score": 1 },
-        { "value": "no",           "label": "Not yet",               "score": 0 }
+        { "value": "yes",       "label": "Yes, plays alongside others",         "score": 3 },
+        { "value": "watches",   "label": "Watches other children playing",      "score": 2 },
+        { "value": "clings",    "label": "Stays close to me, avoids others",   "score": 1 },
+        { "value": "no",        "label": "No interest in other children",       "score": 0 }
       ],
-      "weight": 1.2
+      "weight": 1.1
     }
+
   ]
 }

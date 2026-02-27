@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import type { ProductAwardsData } from '@/types';
 import AwardCard from './AwardCard';
 
@@ -10,9 +11,18 @@ interface AwardsClientProps {
 
 export default function AwardsClient({ data }: AwardsClientProps) {
   const years = Object.keys(data).sort().reverse();
+  const searchParams = useSearchParams();
 
   const [selectedYear, setSelectedYear] = useState<string>(years[0]);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+  // On mount, read ?category= from URL and pre-select it
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat && Object.keys(data[years[0]]).includes(cat)) {
+      setSelectedCategory(cat);
+    }
+  }, [searchParams, data, years]);
 
   const categories = ['All', ...Object.keys(data[selectedYear])];
 
