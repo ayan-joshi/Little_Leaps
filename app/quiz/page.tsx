@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import QuizClient from './QuizClient';
 
 export const metadata: Metadata = {
-  title: 'Baby Milestone Quiz',
+  title: 'Free Baby Milestone Quiz',
   description:
-    'Take our free, expert-designed baby milestone quiz. Select your baby\'s age (1–24 months) and receive personalised development insights by email.',
+    'Take the free Little Leaps baby milestone quiz. Select your baby\'s age (1–24 months), answer a few questions, and get a personalised development report by email — from the team behind the Little Leaps Baby Awards.',
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com'}/quiz` },
 };
 
 export default function QuizPage() {

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About Little Leaps Baby Awards',
   description:
-    'Learn about Little Leaps — our mission to help parents celebrate every precious developmental milestone with joy and expert guidance.',
+    'Learn about Little Leaps — the team of paediatricians and specialists behind the Little Leaps Baby Awards, milestone tracker, and free development quiz for parents.',
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com'}/about` },
 };
 
 // ─── Inline SVG icons replacing emoji ────────────────────────────────────────

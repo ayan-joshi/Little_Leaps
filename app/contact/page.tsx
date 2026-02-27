@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Little Leaps',
   description:
-    "Get in touch with the Little Leaps team. We're here to help with questions about our awards, milestone quiz, or development resources.",
+    "Get in touch with the Little Leaps team. We're here to help with questions about our Baby Awards, milestone quiz, or development resources.",
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com'}/contact` },
 };
 
 export default function ContactPage() {

@@ -6,7 +6,8 @@ import BlogCard from '@/components/blogs/BlogCard';
 export const metadata: Metadata = {
   title: 'Baby Development Blog',
   description:
-    'Expert articles on baby milestones, development tips, and parenting guidance — written by paediatricians and child specialists.',
+    'Expert articles on baby milestones, development tips, baby awards picks, and parenting guidance — written by paediatricians and child development specialists.',
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com'}/blogs` },
 };
 
 const blogs    = blogsData as Blog[];

@@ -4,9 +4,19 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Little Leaps | Baby Milestone Awards & Development Tracker',
+  title: { absolute: 'Little Leaps | Baby Awards & Milestone Tracker' },
   description:
-    'Little Leaps helps parents celebrate every baby milestone with personalised awards, expert development guides, and a free age-tailored milestone quiz.',
+    'Little Leaps Baby Awards — discover the best baby products tested by experts, take a free milestone quiz, and celebrate every developmental first with personalised awards.',
+  alternates: { canonical: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com' },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Little Leaps',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com',
+  description:
+    'Expert-tested baby product awards, free milestone quiz, and development guides for parents.',
 };
 
 // ─── Feature icons (inline SVG — no emoji) ───────────────────────────────────
@@ -76,6 +86,10 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero */}
       <section className="section-padding page-padding bg-gradient-to-b from-blush-50 via-lavender-50 to-transparent">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">

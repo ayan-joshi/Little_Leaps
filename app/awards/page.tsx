@@ -3,17 +3,74 @@ import productAwardsData from '@/data/productAwards.json';
 import type { ProductAwardsData } from '@/types';
 import AwardsClient from '@/components/awards/AwardsClient';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://littleleaps.com';
+
 export const metadata: Metadata = {
-  title: 'Little Leaps Baby Awards',
+  title: 'Baby Product Awards 2026 — Gold & Silver Winners',
   description:
-    'Discover the Little Leaps Baby Awards — Gold and Silver winners selected by our expert team across Diapers, Strollers, Baby Skincare, Feeding Products, Baby Monitors, and Toys.',
+    'The Little Leaps Baby Awards 2026 — Gold and Silver winners for the best baby products, expert-tested across Diapers, Strollers, Baby Skincare, Feeding Products, Baby Monitors, and Toys. Find the safest, highest-rated products for your baby.',
+  keywords: [
+    'baby awards 2026', 'best baby products 2026', 'baby product awards',
+    'best diapers', 'best stroller', 'best baby monitor', 'best baby skincare',
+    'best baby feeding products', 'best baby toys', 'little leaps baby awards',
+  ],
+  alternates: { canonical: `${BASE_URL}/awards` },
+  openGraph: {
+    title: 'Little Leaps Baby Awards 2026 — Best Baby Products',
+    description:
+      'Expert-tested Gold & Silver award winners for the best baby products across every essential category.',
+    url: `${BASE_URL}/awards`,
+  },
 };
 
 const data = productAwardsData as ProductAwardsData;
 
+// Build JSON-LD ItemList from award data
+function buildAwardsSchema() {
+  const items: object[] = [];
+  let position = 1;
+
+  for (const [year, categories] of Object.entries(data)) {
+    for (const [category, awards] of Object.entries(categories as Record<string, { gold: { name: string; brand: string; description: string }; silver: { name: string; brand: string; description: string } }>)) {
+      if (awards.gold) {
+        items.push({
+          '@type': 'ListItem',
+          position: position++,
+          name: `${awards.gold.brand} ${awards.gold.name} — ${year} ${category} Gold Award`,
+          description: awards.gold.description,
+          url: `${BASE_URL}/awards`,
+        });
+      }
+      if (awards.silver) {
+        items.push({
+          '@type': 'ListItem',
+          position: position++,
+          name: `${awards.silver.brand} ${awards.silver.name} — ${year} ${category} Silver Award`,
+          description: awards.silver.description,
+          url: `${BASE_URL}/awards`,
+        });
+      }
+    }
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Little Leaps Baby Awards 2026',
+    description: 'Expert-tested Gold and Silver award winners for the best baby products.',
+    url: `${BASE_URL}/awards`,
+    numberOfItems: items.length,
+    itemListElement: items,
+  };
+}
+
 export default function AwardsPage() {
   return (
     <div className="section-padding page-padding">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildAwardsSchema()) }}
+      />
       <div className="max-w-6xl mx-auto">
 
         {/* Page header */}
@@ -32,7 +89,7 @@ export default function AwardsPage() {
             </div>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
-            Little Leaps Baby Awards
+            Little Leaps Baby Awards 2026
           </h1>
           <p className="text-gray-500 max-w-xl mx-auto">
             Our expert team tests hundreds of baby products each year. These are the Gold and
